@@ -346,10 +346,9 @@ static char UIViewIsPanning;
         CGRect keyboardEndFrameWindow = [[object valueForKeyPath:keyPath] CGRectValue];
         CGRect keyboardEndFrameView = [self convertRect:keyboardEndFrameWindow fromView:self.keyboardActiveView.window];
 
-        if (CGRectEqualToRect(keyboardEndFrameView, self.previousKeyboardRect)) return;
-
-        if (self.keyboardDidMoveBlock && !self.keyboardActiveView.hidden&& !CGRectIsNull(keyboardEndFrameView))
+        if (self.keyboardDidMoveBlock && !self.keyboardActiveView.hidden && !CGRectIsNull(keyboardEndFrameView)) {
             self.keyboardDidMoveBlock(keyboardEndFrameView);
+        }
 
         self.previousKeyboardRect = keyboardEndFrameView;
     }
