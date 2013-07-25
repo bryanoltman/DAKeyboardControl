@@ -376,7 +376,7 @@ static char UIViewKeyboardOpened;
     {
         CGRect keyboardEndFrameWindow = [[object valueForKeyPath:keyPath] CGRectValue];
         CGRect keyboardEndFrameView = [self convertRect:keyboardEndFrameWindow fromView:self.keyboardActiveView.window];
-        
+
         if (CGRectEqualToRect(keyboardEndFrameView, self.previousKeyboardRect)) return;
         
         if (!self.keyboardActiveView.hidden && !CGRectIsNull(keyboardEndFrameView))
