@@ -552,6 +552,10 @@ static char UIViewKeyboardOpened;
 
 - (void)swizzled_addSubview:(UIView *)subview
 {
+    if (subview == self) {
+        return;
+    }
+    
     if (!subview.inputAccessoryView)
     {
         if ([subview isKindOfClass:[UITextField class]])
